@@ -5,7 +5,7 @@ server_port = 60000
 client_socket = socket(AF_INET, SOCK_STREAM)
 client_socket.connect((server_name, server_port))
 
-command = input("Enter the command: ")
+command = input("Enter the message to the server: ")
 client_socket.send(command.encode("utf-8"))
 output = client_socket.recv(1024)
 print(
