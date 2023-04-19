@@ -13,6 +13,6 @@ while True:
     if message == "date":
         output = str(time.ctime())
     else:
-        output = "Unknown message"
+        output = "Unknown command"
     server_socket.sendto(output.encode("utf-8"), addr)
 server_socket.close()

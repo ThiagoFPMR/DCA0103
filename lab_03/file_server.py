@@ -2,7 +2,7 @@ import os
 from socket import *
 
 server_name = ""
-server_port = 60000
+server_port = 61000
 server_socket = socket(AF_INET, SOCK_STREAM)
 server_socket.bind((server_name, server_port))
 server_socket.listen(1)
@@ -12,7 +12,7 @@ while True:
     file_path = connection_socket.recv(1024)
     file_path = file_path.decode("utf-8")
     if os.path.exists(f"files/{file_path}"):
-        with open(file_path, "r") as file:
+        with open(f"files/{file_path}", "r") as file:
             data = file.read()
     else:
         data = "File not found"
